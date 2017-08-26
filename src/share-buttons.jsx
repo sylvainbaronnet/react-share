@@ -176,6 +176,18 @@ export const TelegramShareButton = createShareButton('telegram', props => ({
   windowHeight: 400,
 });
 
+export const EmailShareButton = createShareButton('email', props => ({
+  subject: props.subject,
+  body: props.body,
+}), {
+  subject: PropTypes.string,
+  body: PropTypes.string,
+}, {
+  separator: ' ',
+  windowWidth: 550,
+  windowHeight: 400,
+});
+
 export const WhatsappShareButton = createShareButton('whatsapp', props => ({
   title: props.title,
   separator: props.separator,
