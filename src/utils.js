@@ -30,6 +30,11 @@ export function windowOpen(url, { name, height = 400, width = 550 }) {
     chrome: 'yes',
   };
 
+  if (/mailto:/.test(url)) {
+    document.location.href = url;
+    return false;
+  }
+
   return window.open(
     url,
     platform.name === 'IE' && parseInt(platform.version, 10) < 10 ? '' : name,
